@@ -1,4 +1,8 @@
 import React, { useContext } from 'react';
+import logo1 from './cheese.jpg';
+import logo2 from './loc.jpg';
+import logo3 from './machine.jpg';
+import logo4 from './morecheese.jpg';
 
 import './About.css';
 import { ThemeContext } from '../../contexts/ThemeContext';
@@ -23,11 +27,12 @@ function About() {
                 </div>
                 <div className="about-img">
                     <img 
-                        src={aboutData.image === 1 ? theme.aboutimg1 : theme.aboutimg2}  
+                        src={aboutData.image}
                         alt="" 
                     />
                 </div>
             </div>
+            <img style={{ width: 500, height: 600, display: 'flex',justifyContent: 'center' }} src={logo1} alt="" />
         </div>
 
     )
