@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/cremeria-limas/static/css/main.e676cfb5.chunk.css",
-    "main.js": "/cremeria-limas/static/js/main.9bbfb157.chunk.js",
-    "main.js.map": "/cremeria-limas/static/js/main.9bbfb157.chunk.js.map",
+    "main.js": "/cremeria-limas/static/js/main.069f650e.chunk.js",
+    "main.js.map": "/cremeria-limas/static/js/main.069f650e.chunk.js.map",
     "runtime-main.js": "/cremeria-limas/static/js/runtime-main.75a799f2.js",
     "runtime-main.js.map": "/cremeria-limas/static/js/runtime-main.75a799f2.js.map",
     "static/css/2.baedd4b9.chunk.css": "/cremeria-limas/static/css/2.baedd4b9.chunk.css",
@@ -34,6 +34,7 @@
     "static/media/c.77377419.svg": "/cremeria-limas/static/media/c.77377419.svg",
     "static/media/canva.b96f915b.svg": "/cremeria-limas/static/media/canva.b96f915b.svg",
     "static/media/capacitorjs.7517cfe2.svg": "/cremeria-limas/static/media/capacitorjs.7517cfe2.svg",
+    "static/media/cheese.402c771e.jpg": "/cremeria-limas/static/media/cheese.402c771e.jpg",
     "static/media/coffeescript.848d1c77.svg": "/cremeria-limas/static/media/coffeescript.848d1c77.svg",
     "static/media/contactsBlack.888fb542.svg": "/cremeria-limas/static/media/contactsBlack.888fb542.svg",
     "static/media/contactsBlue.e1eaa251.svg": "/cremeria-limas/static/media/contactsBlue.e1eaa251.svg",
@@ -97,12 +98,16 @@
     "static/media/kotlin.4f592da4.svg": "/cremeria-limas/static/media/kotlin.4f592da4.svg",
     "static/media/lightroom.0e67d833.svg": "/cremeria-limas/static/media/lightroom.0e67d833.svg",
     "static/media/limas.6ada5200.jpg": "/cremeria-limas/static/media/limas.6ada5200.jpg",
+    "static/media/loc.028bb266.jpg": "/cremeria-limas/static/media/loc.028bb266.jpg",
+    "static/media/machine.7eb5db12.jpg": "/cremeria-limas/static/media/machine.7eb5db12.jpg",
     "static/media/markdown.62e50cf0.svg": "/cremeria-limas/static/media/markdown.62e50cf0.svg",
     "static/media/materialui.518da2c0.svg": "/cremeria-limas/static/media/materialui.518da2c0.svg",
     "static/media/matlab.3d4e15a6.svg": "/cremeria-limas/static/media/matlab.3d4e15a6.svg",
     "static/media/memsql.aecce246.svg": "/cremeria-limas/static/media/memsql.aecce246.svg",
+    "static/media/mexico.bd630f9e.PNG": "/cremeria-limas/static/media/mexico.bd630f9e.PNG",
     "static/media/microsoftoffice.c3a1f4f1.svg": "/cremeria-limas/static/media/microsoftoffice.c3a1f4f1.svg",
     "static/media/mongoDB.6c6da702.svg": "/cremeria-limas/static/media/mongoDB.6c6da702.svg",
+    "static/media/morecheese.c9bcfc92.jpg": "/cremeria-limas/static/media/morecheese.c9bcfc92.jpg",
     "static/media/mysql.f9e45d29.svg": "/cremeria-limas/static/media/mysql.f9e45d29.svg",
     "static/media/nextJS.fc272ac2.svg": "/cremeria-limas/static/media/nextJS.fc272ac2.svg",
     "static/media/nginx.14c0011a.svg": "/cremeria-limas/static/media/nginx.14c0011a.svg",
@@ -156,6 +161,6 @@
     "static/css/2.baedd4b9.chunk.css",
     "static/js/2.6d72fbbc.chunk.js",
     "static/css/main.e676cfb5.chunk.css",
-    "static/js/main.9bbfb157.chunk.js"
+    "static/js/main.069f650e.chunk.js"
   ]
 }
