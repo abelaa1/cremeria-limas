@@ -32,7 +32,6 @@ function About() {
                     />
                 </div>
             </div>
-            <img style={{ width: 500, height: 600, display: 'flex',justifyContent: 'center' }} src={logo1} alt="" />
         </div>
 
     )
