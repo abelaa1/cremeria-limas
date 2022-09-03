@@ -113,7 +113,7 @@ autoplaySpeed: 2000,
 return (
 	<>
 	<div className="tag">
-		<h1>Image Gallery</h1>
+		<h1>Fotos</h1>
 	</div>
 	<div className="imgslider">
 		<Slider {...settings}>
