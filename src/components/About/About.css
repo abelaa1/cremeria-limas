@@ -68,6 +68,16 @@
     flex: 0.5;
 }
 
+.tag {
+  text-align: center;
+}
+
+.slick-slide img {
+  margin: auto;
+  width: 50%;
+  height: 50%;
+}
+
 @media (min-width: 992px) and (max-width: 1380px) {
 
     .about-description > h2 {

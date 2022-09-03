@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import logo1 from './cheese.jpg';
+import logo1 from './cheese.png';
 import logo2 from './loc.jpg';
 import logo3 from './machine.jpg';
 import logo4 from './morecheese.jpg';
@@ -8,6 +8,7 @@ import './About.css';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { aboutData } from '../../data/aboutData'
 import ImageSlider from "./SlideShow";
+import images from "./images";
 
 
 function About() {
@@ -43,9 +44,15 @@ function About() {
                     />
                 </div>
             </div>
-                <div></div>
-                <div style={containerStyles}>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                {/* <div style={containerStyles}>
                     <ImageSlider slides={slides} />
+                </div> */}
+                <div className="App">
+                    <ImageSlider images={images}/>
                 </div>
         </div>
 
