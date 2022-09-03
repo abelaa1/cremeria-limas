@@ -7,10 +7,21 @@ import logo4 from './morecheese.jpg';
 import './About.css';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { aboutData } from '../../data/aboutData'
-
+import ImageSlider from "./SlideShow";
 
 
 function About() {
+    const slides = [
+        { url: logo1, title: "beach" },
+        { url: logo2, title: "boat" },
+        { url: logo3, title: "forest" },
+        { url: logo4, title: "italy" },
+      ];
+      const containerStyles = {
+        width: "500px",
+        height: "280px",
+        margin: "0 auto",
+      };
 
     const { theme } = useContext(ThemeContext);
     return (
@@ -32,6 +43,10 @@ function About() {
                     />
                 </div>
             </div>
+                <div></div>
+                <div style={containerStyles}>
+                    <ImageSlider slides={slides} />
+                </div>
         </div>
 
     )
