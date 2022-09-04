@@ -9,17 +9,6 @@ import images from "./images";
 
 
 function About() {
-    // const slides = [
-    //     { url: logo1, title: "beach" },
-    //     { url: logo2, title: "boat" },
-    //     { url: logo3, title: "forest" },
-    //     { url: logo4, title: "italy" },
-    //   ];
-    //   const containerStyles = {
-    //     width: "500px",
-    //     height: "280px",
-    //     margin: "0 auto",
-    //   };
 
     const { theme } = useContext(ThemeContext);
     return (
@@ -45,9 +34,6 @@ function About() {
                 <br></br>
                 <br></br>
                 <br></br>
-                {/* <div style={containerStyles}>
-                    <ImageSlider slides={slides} />
-                </div> */}
                 <div className="App">
                     <ImageSlider images={images}/>
                 </div>
