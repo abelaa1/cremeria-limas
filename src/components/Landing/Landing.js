@@ -6,14 +6,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import './Landing.css';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { headerData } from '../../data/headerData';
-import { socialsData } from '../../data/socialsData';
 
 import {
-    FaTwitter,
-    FaLinkedin,
-    FaGithub,
-    FaYoutube,
-    FaBlogger,
+
 } from 'react-icons/fa';
 
 function Landing() {
