@@ -30,7 +30,7 @@
 
 /* --- Logo --- */
 .navbar__logo img {
-  height: 48px;
+  height: 64px;
   width: auto;
   transition: opacity var(--transition-fast);
 }

@@ -38,9 +38,6 @@ function Footer() {
                     {/* Contact */}
                     <div className="footer__contact">
                         <p className="footer__contact-label">¿Tienes preguntas?</p>
-                        <a href={`tel:${contactsData.phoneRaw}`} className="footer__phone" aria-label={`Llamar al ${contactsData.phone}`}>
-                            {contactsData.phone}
-                        </a>
                         <a
                             href={contactsData.whatsapp}
                             target="_blank"

@@ -35,17 +35,8 @@ function Contacts() {
                     </p>
                 </div>
 
-                {/* Primary phone CTA — prominent on mobile */}
+                {/* Primary WhatsApp CTA — prominent on mobile */}
                 <div className="contacts__primary reveal">
-                    <a
-                        href={`tel:${contactsData.phoneRaw}`}
-                        className="contacts__phone-btn"
-                        aria-label={`Llamar al ${contactsData.phone}`}
-                    >
-                        <FiPhone aria-hidden="true" />
-                        <span>{contactsData.phone}</span>
-                    </a>
-
                     <a
                         href={contactsData.whatsapp}
                         target="_blank"
@@ -60,19 +51,6 @@ function Contacts() {
 
                 {/* Secondary details */}
                 <div className="contacts__details reveal">
-                    <a
-                        href={`mailto:${contactsData.email}`}
-                        className="contacts__detail"
-                        aria-label={`Correo electrónico: ${contactsData.email}`}
-                    >
-                        <div className="contacts__detail-icon" aria-hidden="true">
-                            <FiMail />
-                        </div>
-                        <div className="contacts__detail-text">
-                            <span className="contacts__detail-label">Correo electrónico</span>
-                            <span className="contacts__detail-value">{contactsData.email}</span>
-                        </div>
-                    </a>
 
                     <a
                         href={contactsData.mapsLink}
