@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { FiPhone, FiMapPin, FiMail } from 'react-icons/fi';
+import { FiMapPin } from 'react-icons/fi';
 import { IoLogoWhatsapp } from 'react-icons/io';
 import { contactsData } from '../../data/contactsData';
 import './Contacts.css';
