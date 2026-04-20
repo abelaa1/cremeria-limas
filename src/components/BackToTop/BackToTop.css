@@ -1,24 +1,49 @@
-.backToTop {
-    position: fixed; 
-    right: 10px;
-    bottom: 60px;
-    height: 30px;
-    font-size: 3rem;
-    z-index: 999;
+/* ============================================================
+   BackToTop — Minimalist / Clean
+   ============================================================ */
+
+.back-to-top {
+  position: fixed;
+  bottom: var(--space-xl);
+  right: var(--space-xl);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--color-charcoal);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  z-index: 90;
+  box-shadow: var(--shadow-md);
+  
+  /* Initial hidden state */
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: opacity var(--transition-base), transform var(--transition-base), background-color var(--transition-fast);
 }
 
-.backToTop button {
-    outline: none;
-    border: none;
-    cursor: pointer;
-    background: none;
-    padding: 20px;
+.back-to-top--visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
-@media screen and (max-width: 800px) {
-    .backToTop { 
-        right: -10px;
-        bottom: 50px;
-        font-size: 2.75rem;
-    }
+.back-to-top:hover {
+  background-color: var(--color-charcoal-light);
+  transform: translateY(-3px);
+}
+
+.back-to-top:active {
+  transform: translateY(0);
+}
+
+/* Adjust for mobile safe areas and footer collision avoidance */
+@media (max-width: 768px) {
+  .back-to-top {
+    bottom: var(--space-lg);
+    right: var(--space-lg);
+  }
 }

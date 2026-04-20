@@ -1,18 +1,133 @@
+/* ============================================================
+   Footer — Minimalist / Clean
+   ============================================================ */
+
 .footer {
-    font-family: 'var(--primaryFont)', sans-serif;
-    height: 60px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
+  background-color: var(--color-charcoal);
+  color: var(--color-white);
+  padding: var(--space-3xl) 0 0;
+}
+
+.footer__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2xl);
+  padding-bottom: var(--space-2xl);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+@media (min-width: 640px) {
+  .footer__inner {
+    grid-template-columns: 1.5fr 1fr 1fr;
+    align-items: start;
+  }
+}
+
+/* ── Brand ── */
+.footer__logo {
+  height: 48px;
+  width: auto;
+  /* Invert to white — keeps logo readable on dark background */
+  filter: brightness(0) invert(1);
+  margin-bottom: var(--space-md);
+  opacity: 0.9;
+}
+
+.footer__tagline {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: var(--space-md);
+  font-weight: 500;
+}
+
+.footer__address {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.65;
+  max-width: 28ch;
+}
+
+/* ── Nav links ── */
+.footer__nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.footer__link {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.65);
+  transition: color var(--transition-fast);
+}
+.footer__link:hover {
+  color: var(--color-white);
+}
+
+/* ── Contact ── */
+.footer__contact-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.4);
+  font-weight: 600;
+  margin-bottom: var(--space-md);
+}
+
+.footer__phone {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-white);
+  margin-bottom: var(--space-md);
+  transition: color var(--transition-fast);
+}
+.footer__phone:hover {
+  color: rgba(255,255,255,0.75);
+}
+
+.footer__whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background-color: #25D366;
+  color: var(--color-white);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 100px;
+  transition: background-color var(--transition-fast);
+}
+.footer__whatsapp:hover {
+  background-color: #1fba57;
+  color: var(--color-white);
+}
+.footer__whatsapp svg {
+  font-size: 1.1rem;
+}
+
+/* ── Bottom bar ── */
+.footer__bottom {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding: var(--space-lg) 0;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.3);
+}
+
+@media (min-width: 640px) {
+  .footer__bottom {
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
+  }
 }
 
-.footer p {
-    font-weight: 500;
-    font-family: var(--primaryFont);
-    font-size: 18px;
-}
-
-.footer p span {
-    font-size: 24px;
+.footer__bottom-tagline {
+  color: rgba(255,255,255,0.25);
 }

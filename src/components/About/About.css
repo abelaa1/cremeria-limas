@@ -1,170 +1,188 @@
+/* ============================================================
+   About — Minimalist / Clean
+   ============================================================ */
+
 .about {
-    min-height: 100vh;
-    position: relative;
+  background-color: var(--color-ivory-2);
+  padding: var(--space-3xl) 0;
 }
 
-.about .line-styling{
-  position: absolute;
-  top: 50px;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 50px;
-  width: 85%;
+/* ── Header ── */
+.about__header {
+  margin-bottom: var(--space-2xl);
+}
+.about__header .section-label {
+  margin-bottom: var(--space-sm);
+}
 
-  display: flex;
+.about__title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-charcoal);
+  letter-spacing: -0.02em;
+}
+.about__title em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-taupe);
+}
+
+/* ── Body: text + image side by side ── */
+.about__body {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2xl);
+  margin-bottom: var(--space-2xl);
   align-items: center;
-  justify-content: space-between;
 }
 
-.about .line-styling .style-circle{
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-}
-.about .line-styling .style-line{
-  width: 95%;
-  height: 5px;
-  border-radius: 10px;
-}
-
-.about-body {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    padding-top: 8rem;
-    height: fit-content;
-}
-
-.about-description {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-evenly;
-    flex: 0.5;
-    width: 100%;
-    height: fit-content;
-}
-
-.about-description >h2 {
-    margin-bottom: 40px;
-    font-size: 3.5rem;
-    font-family: var(--primaryFont);
-}
-
-.about-description > p {
-    font-size: 1.25rem;
-    color: #e0d9d9;
-    font-family: var(--primaryFont);
-}
-
-.about-img {
-    margin-top: 40px;
-    pointer-events: none;
-}
-
-.about-img > img {
-    width: 380px;
-    flex: 0.5;
-}
-
-.tag {
-  text-align: center;
-}
-
-.slick-slide img {
-  margin: auto;
-  width: 50%;
-  height: 50%;
-}
-
-@media (min-width: 992px) and (max-width: 1380px) {
-
-    .about-description > h2 {
-      font-size: 3.3rem;
-      margin-bottom: 30px;
-    }
-    .about-description > p {
-      font-size: 1.15rem;
-    }
-
-    .about-img>img {
-        width: 300px;
-    } 
-}
-
-@media screen and (max-width: 992px){
-
-  .about .line-styling{
-    top: 20px;
+@media (min-width: 768px) {
+  .about__body {
+    grid-template-columns: 1fr 1fr;
   }
-
-    .about-body {
-        padding-top: 2rem;
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
-        justify-content: space-evenly;
-    }
-
-    .about-description{
-        flex: 0.6;
-        box-sizing: border-box;
-        /* padding: 5% 10%; */
-        padding: 20px;
-
-    }
-
-    .about-description > h2 {
-        font-size: 3rem;
-        margin-bottom: 20px;
-    }
-
-    .about-description > p {
-        font-size: 1.1rem;
-    }
-
-    .about-img > img {
-        width: 250px;
-        flex: 0.4;
-    }
-
 }
 
-@media screen and (max-width: 800px){
-  .about .line-styling .style-circle{
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-  }
-  .about-description > h2{
-    align-self: center;
-  }
-
+.about__paragraph {
+  font-size: 1rem;
+  color: var(--color-muted);
+  line-height: 1.75;
+  margin-bottom: var(--space-lg);
+}
+.about__paragraph:last-of-type {
+  margin-bottom: 0;
 }
 
-@media screen and (max-width: 600px){
+/* ── Stats ── */
+.about__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
 
-  .about .line-styling .style-circle{
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
+.about__stat {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  padding: var(--space-md) var(--space-lg);
+  flex: 1 1 120px;
+}
+
+.about__stat-num {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-charcoal);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.about__stat-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-taupe);
+  font-weight: 500;
+}
+
+/* ── Main image ── */
+.about__main-img {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  box-shadow: var(--shadow-lg);
+}
+
+.about__main-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.about__main-img:hover img {
+  transform: scale(1.03);
+}
+
+.about__img-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(28,28,28,0.65), transparent);
+  color: var(--color-white);
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  padding: var(--space-lg) var(--space-md) var(--space-md);
+  letter-spacing: 0.04em;
+}
+
+/* ── Photo Grid ── */
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: var(--space-sm);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .about__grid {
+    grid-template-columns: 1.2fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: var(--space-md);
   }
-  .about .line-styling .style-line{
-    width: 93%;
-    height: 3px;
-    border-radius: 10px;
+  .about__grid-item--tall {
+    grid-row: 1 / 2;
   }
+}
 
-  .about-description > h2 {
-    font-size: 2.5rem;
+.about__grid-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+}
+
+.about__grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.about__grid-item:hover img {
+  transform: scale(1.05);
+}
+
+.about__grid-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(28,28,28,0.7) 0%, transparent 70%);
+  color: var(--color-white);
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: var(--space-md) var(--space-md) var(--space-sm);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.about__grid-item:hover .about__grid-overlay {
+  opacity: 1;
+}
+
+/* Show overlay on touch devices by default */
+@media (hover: none) {
+  .about__grid-overlay {
+    opacity: 1;
   }
-
-    .about-description > p{
-      font-size: 0.95rem;
-    }
-
-    .about-img > img {
-        width: 200px;
-    }
 }

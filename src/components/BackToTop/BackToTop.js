@@ -1,51 +1,29 @@
-import React, { useState, useContext } from 'react';
-import { IoIosArrowDropupCircle } from 'react-icons/io';
-import { makeStyles } from '@material-ui/core/styles';
-
-import { ThemeContext } from '../../contexts/ThemeContext';
+import React, { useState, useEffect } from 'react';
+import { IoArrowUpSharp } from 'react-icons/io5';
 import './BackToTop.css';
 
 function BackToTop() {
     const [visible, setVisible] = useState(false);
 
-    const { theme } = useContext(ThemeContext);
-
-    const toggleVisible = () => {
-        const scrolled = document.documentElement.scrollTop;
-        if (scrolled > 300) {
-            setVisible(true);
-        } else if (scrolled <= 300) {
-            setVisible(false);
-        }
-    };
+    useEffect(() => {
+        const handleScroll = () => setVisible(window.scrollY > 400);
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     const scrollToTop = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth',
-        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
-    window.addEventListener('scroll', toggleVisible);
-
-    const useStyles = makeStyles(() => ({
-        icon: {
-            fontSize: '3rem',
-            color: theme.tertiary,
-        },
-    }));
-
-    const classes = useStyles();
-
     return (
-        <div
-            style={{ display: visible ? 'inline' : 'none' }}
-            className='backToTop'
+        <button
+            className={`back-to-top ${visible ? 'back-to-top--visible' : ''}`}
+            onClick={scrollToTop}
+            aria-label="Volver al inicio"
+            tabIndex={visible ? 0 : -1}
         >
-            <button onClick={scrollToTop} aria-label='Back to top'>
-                <IoIosArrowDropupCircle className={classes.icon} />
-            </button>
-        </div>
+            <IoArrowUpSharp aria-hidden="true" />
+        </button>
     );
 }
 

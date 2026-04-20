@@ -1,6 +1,5 @@
-:root {
-    --primaryFont: 'Poppins', sans-serif;
-    /* --primaryFont: 'Montserrat', sans-serif; */
-    /* --primaryFont: 'Raleway', sans-serif; */
+/* App wrapper */
+.app {
+  min-height: 100vh;
+  background-color: var(--color-ivory);
 }
-

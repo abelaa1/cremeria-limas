@@ -1,336 +1,163 @@
+/* ============================================================
+   Contacts — Minimalist / Clean
+   ============================================================ */
+
 .contacts {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    position: relative;
+  background-color: var(--color-ivory-2);
+  padding: var(--space-3xl) 0;
 }
 
-
-.contacts--img {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 280px;
-    pointer-events: none;
+/* ── Header ── */
+.contacts__header {
+  margin-bottom: var(--space-2xl);
+}
+.contacts__header .section-label {
+  margin-bottom: var(--space-sm);
+}
+.contacts__title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 700;
+  color: var(--color-charcoal);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-md);
+}
+.contacts__subtitle {
+  font-size: 1rem;
+  color: var(--color-muted);
+  max-width: 40ch;
+  line-height: 1.6;
 }
 
-.contacts--container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 2rem 6rem 3rem;
-    width: 80%;
-    height: 100%;
-    margin-top: 2rem;
+/* ── Primary CTAs ── */
+.contacts__primary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-2xl);
 }
 
-.contacts--container > h1 {
-    font-family: var(--primaryFont);
-    font-size: 3.5rem;
-    margin-bottom: 2.5rem;
-
-}
-
-.contacts-body {
-    display: flex;
+@media (min-width: 480px) {
+  .contacts__primary {
     flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
-    width: 100%;
-}
-
-.contacts-form {
-    display: flex;
-    flex: 0.4;
-    width: 100%;
-}
-
-.contacts-form form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-evenly;
-    width: 100%;
-}
-
-.input-container {
-    width: 100%;
-}
-
-
-.form-input {
-    height: 50px;
-    box-sizing: border-box;
-    border-radius: 50px; 
-    outline: none;
-    margin-bottom: 2rem;
-    padding: 0.7rem 0.7rem;
-    border-radius: 20px;
-    width: 100%; 
-    resize: none;
-}
-
-
-
-.form-message {
-    height: 150px;
-    box-sizing: border-box;
-    border-radius: 50px; 
-    outline: none;
-    margin-bottom: 2rem;
-    padding: 0.7rem 0.7rem;
-    border-radius: 20px;
-    width: 100%;
-    resize: none;
-}
-
-
-
-.submit-btn button {
-    border: none;
-    outline: none;
-    width: 140px;
-    height: 50px;
-    border-radius: 50px;
-    font-weight: 500;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    cursor: pointer;
-}
-
-.submit-btn button p {
-    font-size: 16px;
-    font-family: var(--primaryFont);
-}
-
-.submit-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-}
-.send-icon {
-    font-size: 25px;
-    transform-origin: center;
-    transform: translate(5px,-3px) rotate(-30deg);
-}
-
-.success-icon {
-    font-size: 28px;
-    transition: all 0.3s 0.8s ease-in-out;
-}
-
-.contacts-details {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-evenly;
-    flex: 0.6;
-    box-sizing: border-box;
-    padding-left: 7rem;
-    margin-top: 1.2rem;
-}
-
-
-
-.personal-details {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    width: 100%;
-    margin-bottom: 2.5rem;
-}
-
-.personal-details p {
-    margin-left: 1.5rem;
-    font-size: 18px;
-    line-height: 110%;
-    font-weight: 500;
-    font-family: var(--primaryFont);
-    width: 45%;
-    word-break: break-word;
-}
-
-.socialmedia-icons {
-    width: 90%;
-    display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 4rem;
-}
-
-
-@media (min-width: 992px) and (max-width: 1380px) {
-    .contacts--img {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        width: 240px;
-    }
-    .contacts--container {
-        padding: 2rem 4rem;
-        width: 90%;
-        margin-top: 1rem;
-    }
-}
-
-
-@media screen and (max-width: 992px) {
-    .contacts--img {
-        display: none;
-    }
-    .contacts--container {
-        width: 100%;
-        margin-top: 1rem;
-    }
-    .contacts--container > h1 {
-        font-size: 3rem;
-        margin: 0 0 1.2rem 0;
-    }
-    .contacts-details {
-        padding-left: 4rem;
-    }
-    .personal-details p {
-        margin-left: 1rem;
-        font-size: 1rem;
-    }
-}
-
-@media screen and (max-width: 800px) {
-    .contacts--container h1 {
-        font-size: 3rem;
-        margin-bottom: 30px;
-    }
-    .contacts--container {
-        padding: 2rem;
-        margin-top: 0rem;
-        align-items: center;
-    }
-    .contacts-body {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .contacts-form {
-        display: flex;
-        flex: 1;
-        width: 80%;
-    }
-    
-    .form-input {
-        margin-bottom: 0.45rem;
-    }
-    .contacts-form form {
-        align-items: flex-end;
-    }
-    .contacts-details {
-        padding-left: 0rem;
-        padding: 1rem;
-        align-items: center;
-        margin-top: 2rem;
-    }
-    .socialmedia-icons {
-        width: 100%;
-        gap: 1.5rem;
-        margin-top: 2rem;
-    }
-    .personal-details {
-        margin-bottom: 1.8rem;
-    }
-    .personal-details p {
-        margin-left: 1.2rem;
-        width: 95%;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .contacts-form {
-        display: flex;
-        flex: 1;
-        width: 100%;
-    }
-    .contacts--container h1 {
-        font-size: 2.5rem;
-        margin-bottom: 20px;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .contacts-details {
-        padding-left: 0rem;
-        padding: 0rem;
-        align-items: center;
-        margin-top: 2rem;
-    }
-    .submit-btn{align-self: center;}
-}
-  
-@media only screen and (min-device-width: 320px) and (max-device-width: 
-  480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2/3) {
-    .contacts-details {
-        padding-left: 0rem;
-        padding: 0rem;
-    }
-}
-
-
-
-
-
-@keyframes spin{
-    0%{
-        opacity: 1;
-        transform: translate(5px,-3px) rotate(0deg);
-    }
-    /* 60%{
-      opacity: 0;
-    }
-    80%{
-      opacity: 1;
-    } */
-    100%{
-      transform: rotate(359deg);
-    }
   }
+}
 
-  @keyframes fly{
-    /* 0%,100%{
-        transform: translate(5px,-3px) rotate(-30deg);
-        opacity: 1;
-    }
-    25%{
-        transform: translate(15px,-10px) rotate(-30deg);
-        opacity: 0.8;
-    }
-    50%{
-        transform: translate(20px,-12px) rotate(-30deg);
-        opacity: 0;
-    }
-    60%{
-        transform: translate(-12px,10px) rotate(-30deg);
-        opacity: 0;
-    }
-    75%{
-        opacity: 0.8;
-    } */
-    10%{
-        transform: rotate(0deg);
-        }
-        20%{
-        transform: translateX(-10px);    
-        }
-        70%{
-          transform: translateX(60px);
-        }
-        100%{
-            transform: translateX(80px);
-        }
-  }
+/* Phone button */
+.contacts__phone-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-md);
+  background-color: var(--color-charcoal);
+  color: var(--color-white);
+  padding: 1rem 1.5rem;
+  border-radius: 100px;
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: background-color var(--transition-base), transform var(--transition-fast), box-shadow var(--transition-base);
+  /* Large touch target for mobile */
+  min-height: 56px;
+}
+.contacts__phone-btn svg {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+.contacts__phone-btn:hover {
+  background-color: var(--color-charcoal-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.contacts__phone-btn:active {
+  transform: translateY(0);
+}
+
+/* WhatsApp button */
+.contacts__whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background-color: #25D366;   /* WhatsApp green */
+  color: var(--color-white);
+  padding: 1rem 1.5rem;
+  border-radius: 100px;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color var(--transition-base), transform var(--transition-fast), box-shadow var(--transition-base);
+  min-height: 56px;
+}
+.contacts__whatsapp-btn svg {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+.contacts__whatsapp-btn:hover {
+  background-color: #1fba57;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.contacts__whatsapp-btn:active {
+  transform: translateY(0);
+}
+
+/* ── Secondary Details ── */
+.contacts__details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.contacts__detail {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  /* Touch target */
+  min-height: 64px;
+}
+.contacts__detail:hover {
+  border-color: var(--color-taupe);
+  box-shadow: var(--shadow-sm);
+}
+
+.contacts__detail-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: var(--color-ivory-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: var(--color-charcoal);
+  flex-shrink: 0;
+}
+
+.contacts__detail-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.contacts__detail-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-taupe);
+  font-weight: 600;
+}
+
+.contacts__detail-value {
+  font-size: 0.9rem;
+  color: var(--color-charcoal);
+  font-weight: 500;
+  /* Prevent overflow on mobile */
+  word-break: break-word;
+}

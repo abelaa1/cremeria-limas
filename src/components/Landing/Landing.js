@@ -1,105 +1,92 @@
-import React, { useContext } from 'react';
-import { Button } from '@material-ui/core';
+import React, { useEffect, useRef } from 'react';
 import { NavHashLink as NavLink } from 'react-router-hash-link';
-import { makeStyles } from '@material-ui/core/styles';
-
-import './Landing.css';
-import { ThemeContext } from '../../contexts/ThemeContext';
 import { headerData } from '../../data/headerData';
-
-import {
-
-} from 'react-icons/fa';
+import cheeseImg from '../About/cheese.png';
+import './Landing.css';
 
 function Landing() {
-    const { theme, drawerOpen } = useContext(ThemeContext);
+    const leftRef  = useRef(null);
+    const rightRef = useRef(null);
 
-    const useStyles = makeStyles((t) => ({
-        contactBtn: {
-            backgroundColor: theme.primary,
-            color: theme.secondary,
-            borderRadius: '30px',
-            textTransform: 'inherit',
-            textDecoration: 'none',
-            width: '150px',
-            height: '50px',
-            fontSize: '1rem',
-            fontWeight: '500',
-            fontFamily: 'var(--primaryFont)',
-            border: `3px solid ${theme.primary}`,
-            transition: '100ms ease-out',
-            '&:hover': {
-                backgroundColor: theme.secondary,
-                color: theme.tertiary,
-                border: `3px solid ${theme.tertiary}`,
-            },
-            [t.breakpoints.down('sm')]: {
-                display: 'none',
-            },
-        },
-    }));
-
-    const classes = useStyles();
+    /* Scroll-reveal on mount */
+    useEffect(() => {
+        const els = [leftRef.current, rightRef.current];
+        const observer = new IntersectionObserver(
+            (entries) => entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    observer.unobserve(e.target);
+                }
+            }),
+            { threshold: 0.15 }
+        );
+        els.forEach(el => el && observer.observe(el));
+        return () => observer.disconnect();
+    }, []);
 
     return (
-        <div className='landing'>
-            <div className='landing--container'>
-                <div
-                    className='landing--container-left'
-                    style={{ backgroundColor: theme.primary }}
-                >
-                    <div className='lcl--content'>
+        <main className="landing" aria-label="Sección principal">
+            <div className="landing__grid">
+
+                {/* ── Left: Text panel ── */}
+                <div className="landing__text reveal" ref={leftRef}>
+                    <p className="section-label landing__label">{headerData.tagline}</p>
+
+                    <h1 className="landing__headline">
+                        El Mejor<br />
+                        <em>Sabor</em> de<br />
+                        San José
+                    </h1>
+
+                    <p className="landing__body">{headerData.description}</p>
+
+                    <div className="landing__actions">
+                        <NavLink
+                            to="/#contacto"
+                            smooth
+                            duration={600}
+                            className="btn btn--primary"
+                            aria-label="Ir a sección de contacto"
+                        >
+                            Contáctanos
+                        </NavLink>
+                        <NavLink
+                            to="/#about"
+                            smooth
+                            duration={600}
+                            className="btn btn--ghost"
+                            aria-label="Conocer más sobre nosotros"
+                        >
+                            Nuestra historia →
+                        </NavLink>
+                    </div>
+
+                    {/* Trust badges */}
+                    <div className="landing__badges">
+                        <span className="landing__badge">⭐ 5.0 Google</span>
+                        <span className="landing__badge">🥛 100% Natural</span>
+                        <span className="landing__badge">📅 Desde 2019</span>
                     </div>
                 </div>
-                <img
-                    src={headerData.image}
-                    alt=''
-                    className='landing--img'
-                    style={{
-                        opacity: `${drawerOpen ? '0' : '1'}`,
-                        borderColor: theme.secondary,
-                    }}
-                />
-                <div
-                    className='landing--container-right'
-                    style={{ backgroundColor: theme.secondary }}
-                >
-                    <div
-                        className='lcr--content'
-                        style={{ color: theme.tertiary }}
-                    >
-                        <h6>{headerData.title}</h6>
-                        <h1>{headerData.name}</h1>
-                        <p>{headerData.desciption}</p>
 
-                        <div className='lcr-buttonContainer'>
-                            {headerData.resumePdf && (
-                                <a
-                                    href={headerData.resumePdf}
-                                    download='resume'
-                                    target='_blank'
-                                    rel='noreferrer'
-                                >
-                                    <Button className={classes.resumeBtn}>
-                                        Download CV
-                                    </Button>
-                                </a>
-                            )}
-                            <NavLink
-                                to='/#contacts'
-                                smooth={true}
-                                spy='true'
-                                duration={2000}
-                            >
-                                <Button className={classes.contactBtn}>
-                                    Contact
-                                </Button>
-                            </NavLink>
+                {/* ── Right: Photo panel ── */}
+                <div className="landing__photo reveal" ref={rightRef} aria-hidden="true">
+                    <div className="landing__photo-frame">
+                        <img
+                            src={cheeseImg}
+                            alt="Queso fresco artesanal Cremería Limas"
+                            className="landing__photo-img"
+                            loading="eager"
+                        />
+                        {/* Floating badge */}
+                        <div className="landing__photo-badge">
+                            <span className="landing__photo-badge-number">2019</span>
+                            <span className="landing__photo-badge-label">Fundados</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </main>
     );
 }
 
